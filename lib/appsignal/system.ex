@@ -18,6 +18,7 @@ defmodule Appsignal.System do
         Mix.Tasks.Compile.Erlang.manifests
         |> List.first
         |> Path.dirname
+        |> String.trim(".mix") # Elixir 1.6 compiled dir
         |> Path.join("priv")
       path ->
         path
